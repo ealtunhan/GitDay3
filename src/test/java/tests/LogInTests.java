@@ -26,37 +26,28 @@ public class LogInTests {
        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
    }
-
     @Test
     public void LogInTest1(){
 
         driver.get("http://secure.smartbearsoftware.com/samples/TestComplete12/WebOrders/Login.aspx");
-
         driver.findElement(By.id("ctl00_MainContent_username")).sendKeys("Tester");
         driver.findElement(By.id("ctl00_MainContent_password")).sendKeys("test" + Keys.ENTER);
         String title = driver.getTitle();
         Assert.assertEquals(title, "Web Orders");
-
     }
-
     @Test
     public void LogOutTest(){
 
         driver.get("http://secure.smartbearsoftware.com/samples/TestComplete12/WebOrders/Login.aspx");
-
         driver.findElement(By.id("ctl00_MainContent_username")).sendKeys("Tester");
         driver.findElement(By.id("ctl00_MainContent_password")).sendKeys("test" + Keys.ENTER);
-
         driver.findElement(By.id("ctl00_logout")).click();
         String title = driver.getTitle();
         Assert.assertEquals(title, "Web Orders Login");
 
     }
-
     @AfterMethod
     public void cleanUp(){
-
         driver.close();
-
     }
 }
