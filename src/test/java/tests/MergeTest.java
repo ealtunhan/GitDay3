@@ -9,6 +9,8 @@ public class MergeTest {
 
         System.out.println("Testing the merge");
 
+        System.out.println("firstly");
+
     }
 
 }
